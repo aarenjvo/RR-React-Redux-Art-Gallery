@@ -9,7 +9,7 @@ function App(props) {
 
   const renderImg = () => {
     if(data.apiData) {
-      return <img style={{'width': '100vw'}} src={data.apiData.primaryImage} alt={data.apiData.title} />
+      return <img style={{'width': '60vw', 'height': '120vh'}} src={data.apiData.primaryImage} alt={data.apiData.title} />
     } else {
       return <p>image here</p>
     }
@@ -17,6 +17,7 @@ function App(props) {
 
   useEffect(() => {
     dispatch(fetchData())
+    // props.objectId only exists if I have connected to redux store
   }, [props.objectId, dispatch])
 
 
@@ -39,7 +40,9 @@ function App(props) {
   );
 }
 
+const mapStateToProps = (state, ownProps) => ({
+  objectId: state.data.objectId
+})
 
-const mapStateToProps = (state, ownProps) => ({ objectId: state.data.objectId })
-
+// curried or applied function to your component
 export default connect(mapStateToProps)(App);
