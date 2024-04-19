@@ -27,10 +27,6 @@ export const dataSlice = createSlice({
     }
 })
 
-async function getArtById(artId){
-    const apiURL = 'https://collectionapi.metmuseum.org/public/collection/v1/objects'
-}
-
 export const { setData, clearData, incrementId, decrementId, inputId } = dataSlice.actions
 // thunk action creator
 export const fetchData = () => {
