@@ -45,4 +45,4 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 // curried or applied function to your component
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App)
